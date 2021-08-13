@@ -1,9 +1,9 @@
 import React from 'react';
 import KanjiWordComponent from '../../../components/Kanji/KanjiWord';
-import { KanjiWord } from '../index';
+import { KanjiWordType } from '../index';
 
 type KanjiParams = {
-	kanjiWord: KanjiWord;
+	kanjiWord: KanjiWordType;
 };
 
 const kanji = ({ kanjiWord }: KanjiParams) => {

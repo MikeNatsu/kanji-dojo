@@ -1,7 +1,7 @@
 import React from 'react';
 import KanjiBox from '../../components/Kanji/KanjiBox';
 
-export interface KanjiWord {
+export interface KanjiWordType {
 	kanji: string;
 	grade: number;
 	meanings: string[];
