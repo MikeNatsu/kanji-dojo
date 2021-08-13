@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import Header from './Header';
 
 export type LayoutType = {
-  children: ReactNode
+	children: ReactNode;
 };
 
 const Layout = ({ children }: LayoutType) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import KanjiWordComponent from '../../../components/KanjiWord';
+import KanjiWordComponent from '../../../components/Kanji/KanjiWord';
 import { KanjiWord } from '../index';
 
 type KanjiParams = {
@@ -7,7 +7,6 @@ type KanjiParams = {
 };
 
 const kanji = ({ kanjiWord }: KanjiParams) => {
-	console.log(kanjiWord);
 	return (
 		<div>
 			<KanjiWordComponent kanjiWord={kanjiWord} />
