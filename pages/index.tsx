@@ -1,12 +1,24 @@
 import Head from 'next/head';
-import React from 'react';
-import Header from '../components/Header';
+import React, { useState } from 'react';
 import KanjiWord from '../components/Kanji/KanjiWord';
 import styles from '../styles/Home.module.scss';
 import { getRandomItem } from '../utils/getRandomItem';
 import { KanjiWordType } from './kanji';
 
 export default function Home({ randomKanji }: { randomKanji: KanjiWordType }) {
+	const [word, setWord] = useState<KanjiWordType>(randomKanji);
+	const generateNewWord = async () => {
+		const res = await fetch(`https://kanjiapi.dev/v1/kanji/all`);
+		const kanjiWords = await res.json();
+
+		const randomKanjiSymbol: string = await getRandomItem(kanjiWords);
+		const randomKanjiRes = await fetch(
+			`https://kanjiapi.dev/v1/kanji/${encodeURIComponent(randomKanjiSymbol)}`
+		);
+		const randomKanji = await randomKanjiRes.json();
+		setWord(await randomKanji);
+	};
+
 	return (
 		<div>
 			<Head>
@@ -15,7 +27,15 @@ export default function Home({ randomKanji }: { randomKanji: KanjiWordType }) {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<div>
-				<KanjiWord kanjiWord={randomKanji} />
+				<KanjiWord kanjiWord={word} />
+				<button
+					onClick={() => {
+						generateNewWord();
+					}}
+					className="btn ms-4 btn-secondary"
+				>
+					New word
+				</button>
 			</div>
 		</div>
 	);
