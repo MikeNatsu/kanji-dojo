@@ -2,8 +2,9 @@ import Head from 'next/head';
 import React from 'react';
 import Header from '../components/Header';
 import styles from '../styles/Home.module.scss';
+import { getRandomItem } from '../utils/getRandomItem';
 
-export default function Home() {
+export default function Home({ randomKanji }: { randomKanji: string }) {
 	return (
 		<div>
 			<Head>
@@ -12,9 +13,21 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<div>
-				
-
+				{randomKanji}
 			</div>
 		</div>
 	);
 }
+
+export const getStaticProps = async () => {
+	const res = await fetch(`https://kanjiapi.dev/v1/kanji/all`);
+	const kanjiWords = await res.json();
+
+	const randomKanji = getRandomItem(kanjiWords);
+
+	return {
+		props: {
+			randomKanji,
+		},
+	};
+};
