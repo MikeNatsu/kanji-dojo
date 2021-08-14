@@ -5,12 +5,21 @@ const KanjiWordComponent = ({ kanjiWord }: { kanjiWord: KanjiWordType }) => {
 	return (
 		<div className="container">
 			<h1 className="fs-1">
-				<span className="badge bg-secondary">{kanjiWord.kanji}</span> -{' '}
-				{kanjiWord.meanings[0]}
+				<span className="badge bg-secondary">{kanjiWord.kanji}</span>
+				{kanjiWord.meanings.length !== 0 && (
+					<span className="text-capitalize">{` - ${kanjiWord.meanings[0]}`}</span>
+				)}
 			</h1>
 
 			<div className="d-flex p-5">
 				<ul className="list-group">
+					{kanjiWord.name_readings.length !== 0 && (
+						<li className="list-group-item btn-group">
+							{kanjiWord.name_readings.map((name) => {
+								return <button className="btn btn-secondary">{name}</button>;
+							})}
+						</li>
+					)}
 					{kanjiWord.grade && (
 						<li className="list-group-item">
 							<b>Grade: </b>
@@ -24,7 +33,7 @@ const KanjiWordComponent = ({ kanjiWord }: { kanjiWord: KanjiWordType }) => {
 						</li>
 					)}
 
-					{kanjiWord.meanings && (
+					{kanjiWord.meanings.length !== 0 && (
 						<li className="list-group-item">
 							<b>Meanings: </b>
 							{kanjiWord.meanings.join(', ')}
