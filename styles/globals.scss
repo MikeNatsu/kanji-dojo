@@ -1,5 +1,6 @@
 html,
-body, main {
+body,
+main {
 	padding: 0;
 	margin: 0;
 	width: 100%;
@@ -19,4 +20,12 @@ a {
 
 .kanjiWord:hover {
 	color: #f1f1f1;
+}
+
+.symbolKanji {
+	a, a:hover, a:visited {
+		font-size: 70px;
+		text-decoration: none;
+		color: black;
+	}
 }

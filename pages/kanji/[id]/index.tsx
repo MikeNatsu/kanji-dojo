@@ -8,7 +8,7 @@ type KanjiParams = {
 
 const kanji = ({ kanjiWord }: KanjiParams) => {
 	return (
-		<div>
+		<div className="container border rounded p-4 w-50">
 			<KanjiWordComponent kanjiWord={kanjiWord} />
 		</div>
 	);
