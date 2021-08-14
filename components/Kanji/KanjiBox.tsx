@@ -18,14 +18,14 @@ const KanjiBox = ({ kanji }: { kanji: string }) => {
 
 	useEffect(() => {
 		getKanjiInfo();
-	}, []);
+	}, [kanji]);
 
 	return (
 		<div>
 			<div className="d-flex m-4">
 				<div className="py-2 px-4 rounded dark bg-secondary text-decoration-none symbolKanji">
 					<Link href={`kanji/${kanji}`}>
-						<a  >{kanji}</a>
+						<a>{kanji}</a>
 					</Link>
 				</div>
 				<div className="flex-grow-1 fs-4 text-capitalize text-center">
