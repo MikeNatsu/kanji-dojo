@@ -23,8 +23,9 @@ const DropdownComponent = ({
 			className="text-capitalize"
 			variant="secondary"
 		>
-			{items.map((item) => (
+			{items.map((item, index) => (
 				<Dropdown.Item
+					key={index.toString()}
 					className="text-capitalize"
 					onClick={() => {
 						if (setter) {
