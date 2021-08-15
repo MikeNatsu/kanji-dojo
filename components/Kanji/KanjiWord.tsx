@@ -11,7 +11,7 @@ const KanjiWordComponent = ({ kanjiWord }: { kanjiWord: KanjiWordType }) => {
 				)}
 			</h1>
 
-			<div className="d-flex p-5">
+			<div className="d-flex p-3">
 				<ul className="list-group">
 					{kanjiWord.name_readings.length !== 0 && (
 						<li className="list-group-item btn-group">

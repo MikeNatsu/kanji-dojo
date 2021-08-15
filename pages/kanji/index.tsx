@@ -41,13 +41,15 @@ const KanjiDictionary = ({ kanjiWords }: KanjiWordsParams) => {
 	return (
 		<div className="m-4">
 			<h2 className="text-center text-decoration-underline">Dictionary</h2>
-			<div className="category d-flex px-5 m-5">
-				<DropdownComponent
-					title="Types"
-					setter={getWordsFromType}
-					items={kanjiTypes}
-					defaultItem="all"
-				/>
+			<div className="category px-5 mx-5 ">
+				<div className="m-3">
+					<DropdownComponent
+						title="Types"
+						setter={getWordsFromType}
+						items={kanjiTypes}
+						defaultItem="all"
+					/>
+				</div>
 				<div className="container text-center">
 					{[...Array(pageDivider(words.length, 10))].map((_, index) => {
 						if (

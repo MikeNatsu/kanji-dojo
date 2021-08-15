@@ -19,7 +19,7 @@ export default function Home({ randomKanji }: { randomKanji: KanjiWordType }) {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<div className="m-4">
-				<div className="container p-4 border rounded w-50 ">
+				<div className="container p-4 border rounded w-75 ">
 					<KanjiWord kanjiWord={word} />
 					<button
 						onClick={() => {
