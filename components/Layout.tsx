@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import Footer from './Footer';
 import Header from './Header';
 
 export type LayoutType = {
@@ -7,12 +8,11 @@ export type LayoutType = {
 
 const Layout = ({ children }: LayoutType) => {
 	return (
-		<div>
-			<main>
-				<Header />
-				{children}
-			</main>
-		</div>
+		<main className="d-flex flex-column justify-content-between">
+			<Header />
+			<div className="flex-grow-1 ">{children}</div>
+			<Footer/>
+		</main>
 	);
 };
 

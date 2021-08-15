@@ -8,6 +8,9 @@ main {
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
+#__next {
+	height: 100%;
+}
 
 a {
 	color: inherit;
@@ -23,15 +26,23 @@ a {
 }
 
 .symbolKanji {
-	a, a:hover, a:visited {
+	a,
+	a:hover,
+	a:visited {
 		font-size: 70px;
 		text-decoration: none;
 		color: black;
 	}
 }
 
-.header{ 
-	h1{
-		cursor: pointer
+footer {
+	svg {
+		height: 20px;
+	}
+}
+
+.header {
+	h1 {
+		cursor: pointer;
 	}
 }
