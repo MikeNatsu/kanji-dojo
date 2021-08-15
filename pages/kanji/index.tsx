@@ -1,4 +1,5 @@
-import { useRouter } from 'next/dist/client/router';
+import { useRouter } from 'next/router';
+
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import DropdownComponent from '../../components/Dropdown';
@@ -58,7 +59,7 @@ const kanji = ({ kanjiWords }: KanjiWordsParams) => {
 							index === pageDivider(words.length, 10) - 1
 						) {
 							return (
-								<span>
+								<span key={`${index}`}>
 									<Link
 										href={{
 											pathname: '/kanji',
@@ -94,7 +95,7 @@ const kanji = ({ kanjiWords }: KanjiWordsParams) => {
 						index >= (currentIndex - 1) * 10 &&
 						index <= (currentIndex - 1) * 10 + 10
 					) {
-						return <KanjiBox kanji={kanji} />;
+						return <KanjiBox key={index.toString()} kanji={kanji} />;
 					}
 				})}
 			</div>
@@ -109,7 +110,7 @@ const kanji = ({ kanjiWords }: KanjiWordsParams) => {
 						index === pageDivider(words.length, 10) - 1
 					) {
 						return (
-							<span>
+							<span key={`${index}`}>
 								<Link
 									href={{
 										pathname: '/kanji',
