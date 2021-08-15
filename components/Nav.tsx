@@ -11,7 +11,12 @@ const Nav = () => {
 				<Link href="/kanji" replace>
 					<a className="mx-3">Dictionary</a>
 				</Link>
-				<a href="https://kanjiapi.dev/" target="_blank" className="mx-3">
+				<a
+					href="https://kanjiapi.dev/"
+					target="_blank"
+					rel="noreferrer"
+					className="mx-3"
+				>
 					API
 				</a>
 			</ul>
