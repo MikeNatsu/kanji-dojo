@@ -21,7 +21,7 @@ type KanjiWordsParams = {
 
 export const kanjiTypes = ['joyo', 'jouyou', 'jinmeiyo', 'jinmeiyou', 'all'];
 
-const kanji = ({ kanjiWords }: KanjiWordsParams) => {
+const KanjiDictionary = ({ kanjiWords }: KanjiWordsParams) => {
 	const router = useRouter();
 	const { page } = router.query;
 	const [words, setWords] = useState<string[]>(kanjiWords);
@@ -153,4 +153,4 @@ export const getStaticProps = async () => {
 	};
 };
 
-export default kanji;
+export default KanjiDictionary;
