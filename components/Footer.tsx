@@ -13,7 +13,7 @@ const Footer = () => {
 			</div>
 			<div>
 				<span dangerouslySetInnerHTML={{ __html: '&copy;' }} />
-				<span>MikeNatsu </span>
+				<span> Mike Natsu</span>
 			</div>
 		</footer>
 	);
