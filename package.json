@@ -18,7 +18,7 @@
     "@zeit/next-sass": "^1.0.1",
     "axios": "^0.21.1",
     "bootstrap": "^5.1.0",
-    "next": "11.0.1",
+    "next": "11.1.0",
     "next-images": "^1.8.1",
     "react": "17.0.2",
     "react-bootstrap": "^1.6.1",
