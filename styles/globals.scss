@@ -35,6 +35,12 @@ a {
 	}
 }
 
+.home {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 footer {
 	svg {
 		height: 20px;

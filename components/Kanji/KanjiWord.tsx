@@ -16,7 +16,14 @@ const KanjiWordComponent = ({ kanjiWord }: { kanjiWord: KanjiWordType }) => {
 					{kanjiWord.name_readings.length !== 0 && (
 						<li className="list-group-item btn-group">
 							{kanjiWord.name_readings.map((name, index) => {
-								return <button key={index.toString()} className="btn btn-secondary">{name}</button>;
+								return (
+									<button
+										key={`button-${name}-readings-${index}`}
+										className="btn btn-secondary"
+									>
+										{name}
+									</button>
+								);
 							})}
 						</li>
 					)}

@@ -11,7 +11,7 @@ const Layout = ({ children }: LayoutType) => {
 		<main className="d-flex flex-column justify-content-between">
 			<Header />
 			<div className="flex-grow-1 ">{children}</div>
-			<Footer/>
+			<Footer />
 		</main>
 	);
 };
